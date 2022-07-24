@@ -1,0 +1,101 @@
+{% extends 'spicyo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="yellow_bg">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2>Our Blog</h2>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+<!-- blog -->
+    <div class="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title">
+              <i><img src="{% static 'images/title.png' %}" alt="#"/></i>
+
+              <span>when looking at its layout. The point of using Lorem</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+            <div class="blog_box">
+              <div class="blog_img_box">
+                <figure><img src="{% static 'images/blog_img1.png' %}" alt="#"/>
+                 <span>02 FEB 2019</span>
+                </figure>
+              </div>
+              <h3>Spicy Barger</h3>
+              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the </p>
+            </div>
+          </div>
+           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+            <div class="blog_box">
+              <div class="blog_img_box">
+                <figure><img src="{% static 'images/blog_img2.png' %}" alt="#"/>
+                 <span>02 FEB 2019</span>
+                </figure>
+              </div>
+              <h3>Egg & Tosh</h3>
+              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the </p>
+            </div>
+          </div>
+           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div class="blog_box">
+              <div class="blog_img_box">
+                <figure><img src="{% static 'images/blog_img3.png' %}" alt="#"/>
+                 <span>02 FEB 2019</span>
+                </figure>
+              </div>
+              <h3>Pizza</h3>
+              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- end blog -->
+
+    <div class="overlay"></div>
+    <!-- Javascript files-->
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+     <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+     <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+   <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function() {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'spicyo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="yellow_bg">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-12">
+                      <div class="title">
+                         <h2>Our Recipes</h2>
+                      </div>
+                   </div>
+                </div>
+              </div>
+        </div>
+        <!-- section -->
+        <section class="resip_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme">
+                            {% for recipe in recipes %}
+                                <div class="item">
+                                    <div class="product_blog_img">
+                                        <img src="" alt="#" />{{ recipe.image }}
+                                    </div>
+                                    <div class="product_blog_cont">
+                                        <h3>{{recipe.title}}</h3>
+                                        <h4><span class="theme_color">$</span>{{recipe.price}}</h4>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="overlay"></div>
+    <!-- Javascript files-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+     <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+     <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+   <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function() {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+   </script>
+
+    <script>
+         $(document).ready(function() {
+           var owl = $('.owl-carousel');
+           owl.owlCarousel({
+             margin: 10,
+             nav: true,
+             loop: true,
+             responsive: {
+               0: {
+                 items: 1
+               },
+               600: {
+                 items: 2
+               },
+               1000: {
+                 items: 5
+               }
+             }
+           })
+         })
+    </script>
+{% endblock %}
