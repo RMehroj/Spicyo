@@ -10,20 +10,24 @@
                     <h2>Request  A<strong class="white"> Call  Back</strong></h2>
                   </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-
-                        <form class="main_form">
+                        <form class="main_form" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <input class="form-control" placeholder="Name" type="text" name="Name">
+                                    <input class="form-control" placeholder="Name" type="text" name="name">
+                                    {{form.name}}
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <input class="form-control" placeholder="Email" type="text" name="Email">
+                                    <input class="form-control" placeholder="Email" type="text" name="email">
+                                    {{form.email}}
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <input class="form-control" placeholder="Phone" type="text" name="Phone">
+                                    <input class="form-control" placeholder="Phone" type="text" name="phone">
+                                    {{form.phone}}
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    <textarea class="textarea" placeholder="Message" type="text" name="message"></textarea>
+                                    {{form.message}}
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <button class="send">Send</button>
@@ -65,7 +69,7 @@
             </div>
             <div class="copyright">
                 <div class="container">
-                    <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                    <p>© 2022 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
                 </div>
             </div>
         </div>

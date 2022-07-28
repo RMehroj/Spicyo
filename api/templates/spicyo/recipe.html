@@ -24,7 +24,7 @@
                             {% for recipe in recipes %}
                                 <div class="item">
                                     <div class="product_blog_img">
-                                        <img src="" alt="#" />{{ recipe.image }}
+                                        <img src="{{ request.recipe.image.url }}" alt="#" />
                                     </div>
                                     <div class="product_blog_cont">
                                         <h3>{{recipe.title}}</h3>
