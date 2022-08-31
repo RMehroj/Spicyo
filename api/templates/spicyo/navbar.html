@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="full">
-                                <a class="logo" href="index.html"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                                <a class="logo" href="{% url 'homepage' %}"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
                             </div>
                         </div>
                         <div class="col-md-9">
@@ -50,7 +50,10 @@
                                         <li class="dinone">Contact Us : <img style="margin-right: 15px;margin-left: 15px;" src="{% static 'images/phone_icon.png' %}" alt="#"><a href="#">88-127-9798</a></li>
                                         <li class="dinone"><img style="margin-right: 15px;" src="{% static 'images/mail_icon.png' %}" alt="#"><a href="#">mehrojraupov@gmail.com</a></li>
                                         <li class="dinone"><img style="margin-right: 15px;height: 21px;position: relative;top: -2px;" src="{% static 'images/location_icon.png' %}" alt="#"><a href="#">104 Tashkent , UZB</a></li>
-                                        <li class="button_user"><a class="button active" href="#">Login</a><a class="button" href="#">Register</a></li>
+                                        <li class="button_user">
+                                            <a class="button active" href="{% url 'login' %}">Login</a>
+                                            <a class="button" href="{% url 'signup' %}">Register</a>
+                                        </li>
                                         <li><img style="margin-right: 15px;" src="{% static 'images/search_icon.png' %}" alt="#"></li>
                                         <li>
                                             <button type="button" id="sidebarCollapse">
